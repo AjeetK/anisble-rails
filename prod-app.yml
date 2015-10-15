@@ -1,0 +1,11 @@
+---
+- hosts: prod-app
+  sudo: yes
+  tasks:
+    - name: Installs nginx on web server
+      apt: pkg=nginx state=installed update_cache=true
+      notify:
+        - start nginx
+  handlers:
+    - name: start nginx
+      service: name=nginx state=started
