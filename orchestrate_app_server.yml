@@ -1,0 +1,14 @@
+---
+  - name: orchestration
+    hosts: launched
+    sudo: yes
+    roles:
+       - rvm_io.rvm1-ruby
+       - nginx-passenger
+#    - s3cmd
+#    - rvm_io.rvm1-ruby
+#    - nginx-passenger
+#    - mysql
+#    - webserver
+
+

@@ -3,7 +3,7 @@ server {
   listen 80;
 
   gzip_types text/plain text/css application/x-javascript text/xml application/xml application/xml+rss text/javascript application/json;
-  server_name www.{{ webserver_name }};
+  server_name {{ webserver_name }};
   root {{ deploy_directory }}/public;
 
   passenger_enabled on;
@@ -33,5 +33,5 @@ server {
 
 server {
         server_name {{ webserver_name }};
-        rewrite ^ http://www.{{ webserver_name }}$request_uri? permanent;
+        rewrite ^ http://{{ webserver_name }}$request_uri? permanent;
 }
